@@ -1,0 +1,327 @@
+:root {
+    --green-color: #00A878;
+    --primary-color: #004080;
+    --gray-color: #737373;
+    --softer-gray-color: #CCCCCC;
+    --red-color: #FF4757;
+}
+
+.sidebar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    position: fixed;
+    bottom: 0;
+    box-shadow: 0px -8px 13px 0px rgba(0,0,0,0.3);
+    background: white;
+}
+.sidebar i{
+    font-size: 1.2rem;
+    color: var(--gray-color);
+}
+
+.selected , .selected i {
+    font-weight: 700 !important;
+    color: var(--primary-color) !important;
+}
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    font-family: rubik,iransans;
+    margin-bottom: 1rem !important;
+
+}
+.header h2 {
+    font-size: 1.3rem;
+    direction:rtl;
+    padding: 1rem;
+    color: var(--gray-color);
+}
+.hide-sec {
+    display: none !important;
+}
+.add-post {
+    font-family: rubik,iransans;
+    direction: rtl;
+    padding-bottom: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.add-post .header {
+    width: 100%;
+}
+.add-post form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.radio {
+    display: flex;
+    justify-content: space-around;
+}
+.form-row{
+    display: flex;
+}
+.form-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.form-input input {
+    padding: 0.6rem;
+    border: 1px solid var(--gray-color);
+    border-radius: 5px;
+    width: calc(100% - 10px);
+}
+.form-input textarea {
+    padding: 0.6rem;
+    border: 1px solid var(--gray-color);
+    border-radius: 5px;
+}
+.add-post form  button {
+    background-color: var(--green-color);
+    border-radius: 10px;
+    color: white;
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+}
+.admins-sec {
+    font-family: rubik, iransans !important;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem !important;
+
+}
+.admins-sec article {
+    width: 100%;
+    border: 1px solid var(--gray-color);
+    border-radius: 5px;
+    display: flex;
+    direction: rtl;
+    justify-content: center;
+    padding: 1rem;
+    align-items: space-between;
+    flex-direction: column;
+}
+.admins-sec article .top{
+    display: flex;
+    justify-content: space-between;
+}
+.admins-sec article div:nth-child(1){
+    display: flex;
+    gap: 5px;
+    font-size: 1.2rem;
+}
+.admins-sec article div:nth-child(2){
+    display: flex;
+    gap: 10px;
+}
+.admins-sec article div button {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+#third_div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+#third_div_two {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.admins {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.admins-sec article {
+    max-width: 700px !important;
+}
+.admins-sec article .btn-actions button:nth-child(1){
+    background-color: var(--red-color);
+}
+
+.admins-sec article .btn-actions button .info1 {
+    position: absolute;
+    top: -80%;
+    background-color: var(--gray-color);
+    padding: 0.09rem 0.4rem;
+    border-radius: 5px;
+    display: none;
+}
+.admins-sec article .btn-actions button .info2 {
+    position: absolute;
+    top: -80%;
+    background-color: var(--gray-color);
+    padding: 0.09rem 0.4rem;
+    border-radius: 5px;
+    display: none;
+}
+.admins-sec article div button:nth-child(2){
+    background-color: var(--green-color);
+}
+
+.admins-sec article .bottom{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+.admins-sec article .bottom button {
+    background-color: var(--gray-color) !important;
+    width: 1.2rem;
+    height: 1.2rem;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+.admins-sec article .bottom button i {
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+}
+.admin-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    direction: rtl;
+}
+.admin-group .add-new-admin {
+    display: flex;
+    gap: 10px;
+    max-width: 240px;
+    border: 1px solid var(--gray-color);
+    padding: 1rem;
+    border-radius: 5px;
+
+}
+.error {
+    border:1px solid var(--red-color) !important;
+    color: var(--red-color) !important;
+}
+.error::placeholder {
+    color: var(--red-color) !important;
+}
+.success {
+    justify-content: center;
+    padding: 1rem;
+    color: var(--green-color);
+    font-weight: 900;
+    font-size: 1.2rem;
+    display: none;
+}
+.admin-group .add-new-admin h2 {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.error_message {
+    color: var(--red-color);
+    font-size: 0.9rem;
+    display: none;
+}
+.aside-item {
+    font-family: rubik,iransans;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+.aside-item h2 {
+    display: none;
+    cursor:pointer;
+}
+.price_quantity {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    direction: rtl;
+}
+.price_quantity .price {
+    display: flex;
+    gap: 0.7rem;
+}
+.price_quantity .price .price_number h2:nth-child(2),
+.price_quantity .price .price_number h2:nth-child(3) {
+    font-weight: 700;
+}
+.price_quantity .price .price_number {
+    display: flex;
+    gap: 1px;
+}
+#type {
+    font-size: 1rem;
+    display: flex;
+    width: 20%;
+    padding: 0.6rem;
+}
+@media (min-width:768px) {
+    .add-post form {
+        width: 70% !important;
+    }
+    .add-post form .form-row {
+        justify-content: space-between;
+    }
+    .admins-sec .admin-group article {
+        max-width: 300px;
+    }
+    .admin-group {
+        justify-content: flex-end;
+    }
+}
+@media (min-width:1080px) {
+    .add-post form {
+        width: 60% !important;
+    }
+    .aside-item h2 {
+        display: block;
+    }
+}
+
+@keyframes hide-side {
+    from{
+        bottom:0;
+    }
+    to{
+        bottom:-100%;
+    }
+}
+@keyframes show-side {
+    from{
+        bottom:-100%;
+    }
+    to{
+        bottom:0;
+    }
+}
+@keyframes fade-in {
+    from{
+        opacity: 0%;
+    }
+    to{
+        opacity: 100%;
+    }
+}
+@keyframes fade-out {
+    from{
+        opacity: 100%;
+    }
+    to{
+        opacity: 0%;
+    }
+}
