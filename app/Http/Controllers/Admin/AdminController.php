@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
@@ -17,15 +18,6 @@ class AdminController extends Controller
         ]);
     }
     public function store(Request $request){
-//        return response()->json(['message' => 'Item saved']);
-//        $validated_data = $request->validate([
-//            'title' => ['string' ,'required'],
-//            'subject' => ['string' , 'required'],
-//            'description' => ['string', 'required'],
-//            'type' => ['required'],
-//            'price' => ['required'],
-//            'quantity' => ['required']
-//        ]);
 
         $validator = Validator::make($request->all(), [
             'title' => ['required'],

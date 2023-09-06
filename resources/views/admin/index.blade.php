@@ -247,7 +247,7 @@
     const add_new_post_successful = document.getElementById('success');
     add_new_post.addEventListener('click' , function(event) {
         event.preventDefault();
-
+        console.log(form_input_description.value)
         fetch('{{route('add_new_post')}}', {
             method: 'POST',
             headers: {
@@ -263,8 +263,14 @@
                 'price': form_input_price.value,
                 'quantity': form_input_quantity.value,
             })
-        }).then(response => response.json())
+        }).then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
             .then(data => {
+                console.log(data);
                     if(data.errors){
                         if(data.errors['title']){
                             form_input_title.classList.add('error');

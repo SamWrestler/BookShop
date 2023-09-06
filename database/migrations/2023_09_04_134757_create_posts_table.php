@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('subject')->nullable();
             $table->enum('type' , ['author' , 'translator']);
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->unsignedBigInteger('price');
             $table->unsignedBigInteger('quantity')->nullable();
             $table->timestamps();
