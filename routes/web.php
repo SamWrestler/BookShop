@@ -25,3 +25,4 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/admin' ,[AdminController::class , 'index'])->middleware('auth');
 Route::post('/admin/new' , [AdminController::class, 'store'])->name('add_new_post');
+Route::post('/admin/create_admin', [AdminController::class , 'create_admin'])->name('create_admin');

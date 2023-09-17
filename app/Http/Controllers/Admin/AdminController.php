@@ -40,4 +40,19 @@ class AdminController extends Controller
         ]);
         return response()->json(['success' => 'پست مورد نظر با موفقیت ساخته شد']);
     }
+
+    public function create_admin(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => ['required'],
+            'email' => ['required'],
+            'number' => ['required'],
+            'type' => ['required'],
+        ]);
+        if($validator->fails()){
+            return response()->json(['errors' => $validator->errors()]);
+        }
+        return response()->json(['success' => 'پست مورد نظر با موفقیت ساخته شد']);
+
+    }
 }

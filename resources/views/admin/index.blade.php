@@ -14,9 +14,9 @@
     <title>پنل ادمین</title>
 </head>
 <body>
-<section class="dashboard container" id="dashboard-sec">
-    <div class="header ">
-        <h2>داشبورد</h2>
+<section class="dashboard" id="dashboard-sec">
+    <div class="header">
+        <h2 class="title">داشبورد</h2>
         <hr />
     </div>
     <div class="cards">
@@ -27,7 +27,7 @@
                 </div>
                 <div class="content">
                     <div class="first-row">
-                        <h2 class="title">{{$item->title}}</h2>
+                        <h2>{{$item->title}}</h2>
                         @if($item->type === 'author')
                             <h2 class="label">ترجمه</h2>
                         @else
@@ -70,9 +70,9 @@
         @endforeach
     </div>
 </section>
-<section class="add-post containers hide-sec" id="add-post-sec">
+<section class="add-post hide-sec" id="add-post-sec">
     <div class="header ">
-        <h2>افزودن پست</h2>
+        <h2  class="title">افزودن پست</h2>
         <hr />
     </div>
     <form action="{{route('add_new_post')}}" method="POST" name="form_data">
@@ -97,7 +97,7 @@
             </div>
         </div>
         <label for="type">مقدمه کتاب</label>
-        <select name="type" id="type" class="">
+        <select name="type" id="type" class="type">
             <option disabled selected value>یک مورد</option>
             <option value="author">تالیف</option>
             <option value="translator">ترجمه</option>
@@ -127,84 +127,107 @@
         <button id="add_new_post">افزودن پست</button>
     </form>
 </section>
+<section id="add_new_admin" class="hide-sec">
+    <div class="add_form_container">
+        <form action="#" method="POST">
+            @csrf
+            <div class="form-input">
+                <label for="name">نام</label>
+                <input type="text" id="name" name="name" placeholder="سامان">
+            </div>
+            <div class="form-input">
+                <label for="email">ایمیل</label>
+                <input type="email" id="email" name="email" placeholder="test@gmail.com">
+            </div>
+            <div class="form-input">
+                <label for="number">شماره تلفن</label>
+                <input type="text" id="number" name="number" placeholder="0935******">
+            </div>
+            <div class="checkbox">
+                <label for="superadmin">سوپر ادمین</label>
+                <input type="checkbox" name="superadmin" id="superadmin">
+            </div>
+            <button id="create_new_admin_btn">افزودن ادمین</button>
+            <h2 id="cancel_add_new_admin">لغو</h2>
+        </form>
+    </div>
+</section>
 <section class="admins-sec container hide-sec" id="admin-sec">
     <div class="header">
-        <h2>مدیریت ادمین</h2>
-        <hr />
+        <div class="top_header">
+            <h2 class="title">مدیریت ادمین</h2>
+            <div class="add_new_admin_btn" id="add_new_admin_btn">
+                <h2>افزودن ادمین جدید</h2>
+                <i class="fa-solid fa-user-plus"></i>
+            </div>
+        </div>
+        <hr/>
     </div>
+
     <section class="admin-group">
-        <div class="add-new-admin">
-            <i class="fa-solid fa-user-plus"></i>
-            <h2>افزودن ادمین جدید</h2>
-        </div>
-        <div class="admins">
-            <article>
-                <div class="top">
-                    <div>
-                        <h2>1.</h2>
-                        <h2>سامان</h2>
-                    </div>
-                    <div class="btn-actions">
-                        <button id="action_button_delete">
-                            <div id="third_div"></div>
-                            <h2 class="info1" id="info1">حذف</h2>
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
-                        <button id="action_button_promote">
-                            <div id="third_div_two"></div>
-                            <h2 class="info2" id="info2">ارتقاء</h2>
-                            <i class="fa-regular fa-arrow-up"></i>
-                        </button>
-                    </div>
+        <article>
+            <div class="top">
+                <div>
+                    <h2>1.</h2>
+                    <h2>سامان</h2>
                 </div>
-
-            </article>
-            <article>
-                <div class="top">
-                    <div>
-                        <h2>1.</h2>
-                        <h2>سامان</h2>
-                    </div>
-                    <div class="btn-actions">
-                        <button id="action_button_delete">
-                            <div id="third_div"></div>
-                            <h2 class="info1" id="info1">حذف</h2>
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
-                        <button id="action_button_promote">
-                            <div id="third_div_two"></div>
-                            <h2 class="info2" id="info2">ارتقاء</h2>
-                            <i class="fa-regular fa-arrow-up"></i>
-                        </button>
-                    </div>
+                <div class="btn-actions">
+                    <button id="action_button_delete">
+                        <div id="third_div"></div>
+                        <h2 class="info1" id="info1">حذف</h2>
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                    <button id="action_button_promote">
+                        <div id="third_div_two"></div>
+                        <h2 class="info2" id="info2">ارتقاء</h2>
+                        <i class="fa-regular fa-arrow-up"></i>
+                    </button>
                 </div>
-
-            </article>
-            <article>
-                <div class="top">
-                    <div>
-                        <h2>1.</h2>
-                        <h2>سامان</h2>
-                    </div>
-                    <div class="btn-actions">
-                        <button id="action_button_delete">
-                            <div id="third_div"></div>
-                            <h2 class="info1" id="info1">حذف</h2>
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
-                        <button id="action_button_promote">
-                            <div id="third_div_two"></div>
-                            <h2 class="info2" id="info2">ارتقاء</h2>
-                            <i class="fa-regular fa-arrow-up"></i>
-                        </button>
-                    </div>
+            </div>
+        </article>
+        <article>
+            <div class="top">
+                <div>
+                    <h2>1.</h2>
+                    <h2>سامان</h2>
                 </div>
-
-            </article>
-        </div>
+                <div class="btn-actions">
+                    <button id="action_button_delete">
+                        <div id="third_div"></div>
+                        <h2 class="info1" id="info1">حذف</h2>
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                    <button id="action_button_promote">
+                        <div id="third_div_two"></div>
+                        <h2 class="info2" id="info2">ارتقاء</h2>
+                        <i class="fa-regular fa-arrow-up"></i>
+                    </button>
+                </div>
+            </div>
+        </article>
+        <article>
+            <div class="top">
+                <div>
+                    <h2>1.</h2>
+                    <h2>سامان</h2>
+                </div>
+                <div class="btn-actions">
+                    <button id="action_button_delete">
+                        <div id="third_div"></div>
+                        <h2 class="info1" id="info1">حذف</h2>
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                    <button id="action_button_promote">
+                        <div id="third_div_two"></div>
+                        <h2 class="info2" id="info2">ارتقاء</h2>
+                        <i class="fa-regular fa-arrow-up"></i>
+                    </button>
+                </div>
+            </div>
+        </article>
     </section>
 </section>
-<section class="cart-sec container" id="cart-sec">
+<section class="cart-sec container hide-sec" id="cart-sec">
 </section>
 <aside class="sidebar" id="sidebar">
     <div class="aside-item" id="cart">
@@ -345,6 +368,34 @@
 
         })
 
+    });
+</script>
+<script>
+    const create_new_admin_btn = document.getElementById('create_new_admin_btn');
+    const form_input_name = document.getElementById('name');
+    const form_input_email = document.getElementById('email');
+    const form_input_number = document.getElementById('number');
+    const form_input_admin_type = document.getElementById('superadmin');
+    const hidden_input = document.form_data.elements['_token'];
+
+    create_new_admin_btn.addEventListener('click' , function(event) {
+        event.preventDefault()
+        fetch('{{route('create_admin')}}' , {
+            method:'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.head.querySelector('meta[name=csrf-token]').content,
+            },
+            body: JSON.stringify({
+                '_token': hidden_input.value,
+                'name' : form_input_name.value,
+                'email': form_input_email.value,
+                'number': form_input_number.value,
+                'type' : form_input_admin_type.value
+            })
+        })
+            .then(response => response.json)
+            .then(data => console.log(data))
     });
 </script>
 </body>
